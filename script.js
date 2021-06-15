@@ -10,7 +10,7 @@ function startQuiz(){
 }
 
 
-function 8ball() {
+function ball() {
   var answers = [
     "Ask again later.",
 "Concentrate and ask again.",
@@ -29,4 +29,4 @@ function 8ball() {
 
   var rand = Math.random() * tasks.length;
   rand = Math.floor(rand);
-  document.getElementById("8ball").innerHTML = tasks[rand]; }
+  document.getElementById("8ball").innerHTML = answers[rand]; }
