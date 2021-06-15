@@ -10,27 +10,23 @@ function startQuiz(){
 }
 
 
-function chooseTask() {
-  var tasks = [
-    "Ask again later."
-"Concentrate and ask again.""
-"Don’t count on it.""
-"Most likely.""
-"My sources say no.""
-"Outlook not so good.""
-"Outlook good.""
-"Reply hazy, try again.""
-Very doubtful.
-Yes – definitely.
+function 8ball() {
+  var answers = [
+    "Ask again later.",
+"Concentrate and ask again.",
+"Don’t count on it.",
+"Most likely.",
+"My sources say no.",
+"Outlook not so good.",
+"Outlook good.",
+"Reply hazy, try again.",
+"Very doubtful.",
+"Yes – definitely."
   ];
-  //document.getElementById("msg").innerHTML = tasks[0];
-  document.getElementById("msg").innerHTML = ""; //blank out box
-  for (var i = 0; i < 6; i++) {
-    document.getElementById("msg").innerHTML =
-      document.getElementById("msg").innerHTML + "<br>" + tasks[i];
-  }
+  document.getElementById("msg").innerHTML = ""; 
+  for (var i = 0; i < 9; i++) 
+  {
 
   var rand = Math.random() * tasks.length;
   rand = Math.floor(rand);
-  document.getElementById("msg2").innerHTML = tasks[rand];
-}
+  document.getElementById("8ball").innerHTML = tasks[rand]; }
