@@ -8,3 +8,10 @@ function startQuiz(){
     alert("Wrong it was 1000");
   }
 }
+  var answer = prompt("What is the 4 bit equivilent to 1 ");
+  if(answer=="1000"){
+    alert("correct");
+    score = score + 1;
+  }else{
+    alert("Wrong it was 0001");
+  }
