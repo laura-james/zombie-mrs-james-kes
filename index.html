@@ -11,6 +11,12 @@
   </head>
   <body>
     My zombie map
+    
+    Select an emoji
+<select id="icon_to_use">
+  <option value="https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709">Zombie</option>
+  <option value="https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709">Hospital</option>
+</select>
     <div id="zombie_map"></div>
     <script>
       var zombie_map;
@@ -22,10 +28,17 @@
             center: { lat: 52.206727, lng: 0.12445 }
           }
         );
+        zombie_map.addListener("click", function(e) {
+           var location = e.latLng;
+          placemarker(location);
+        });
+      }
+      function placemarker(location) {
         var marker = new google.maps.Marker({
-          position: { lat: 52.206727, lng: 0.12445 },
+          position: location,
           map: zombie_map
         });
+        
       }
     </script>
     Items I want to appear on my page will go here
