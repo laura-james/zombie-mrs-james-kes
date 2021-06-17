@@ -1,157 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="decription" content="VGhpcyBpcyBmb3IgY2xhc3MgOWQy">
-    <title>Year 9D2 Exam Tasks</title>
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <style>
+      #zombie_map {
+        width: 600px;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
+    <title>My page title</title>
   </head>
   <body>
-    <h1>Section 1: HTML and CSS</h1>
-    <h2>HTML (5 mins)</h2>
-    <div class="instructions">
-      <p>
-        You need to create a new page called About Me
-      </p>
-      <ul>
-        <li>
-          Add a new page called <strong>aboutme.html</strong> duplicating &
-          renaming the index.html page and stripping out all the HTML that is in
-          the body tag
-        </li>
-        <li>Add a h1 heading with your name</li>
-        <li>A h2 heading with your Form name</li>
-        <li>A paragraph about your favourite food (no more than 4 sentences)</li>
-        <li>Insert an image of your favourite food</li>
-        <li>
-          On <strong>*this*</strong> page add a link that takes you to the
-          <strong>aboutme.html</strong> page - with the link saying "Click here
-          to find out about YOUR NAME"
-        </li>
-      </ul>
-    </div>
-    
-        <td><a href="abouteme.html">click here to find out about jasper vincent peter trevethick</a></td>
-    
-    <h2>CSS (10 mins)</h2>
-    <div class="instructions">
-      <p>
-        You then should style the pages as follows:
-      </p>
-
-      <ol>
-        <li>Make the background colour of the body #a5e6b4</li>
-        <li>Change all text on the body to be “cursive”</li>
-        <li>Make all text on the body #004531</li>
-        <li>Centre all the text</li>
-        <li>Make the size of the h1 tags 50px and #0F5156</li>
-        <li>Change font of h1 tag to verdana</li>
-        <li>Make the size of the h2 tags 30px and #b6895e</li>
-        <li>Add a 5px solid white border to the images</li>
-        <li>Add a 10px solid #1fa3ac border to the divs</li>
-        <li>Make the background of the divs white</li>
-        <li>All buttons should have a background colour red and a padding of 20px</li>
-        <li>The background colour of button id "button1" should be blue</li>
-        <li>The background colour of button id "button1" should be green</li>
-      </ol>
-    </div>
-    <h1>
-      Section 2: Javascript
-    </h1>
-    <h2>Part 1: Binary Quiz (12 mins)</h2>
-    <div class="instructions">
-      <p>
-        Question 1 has been done for you.
-        <li>
-          Add 5 different questions to this quiz, all with the correct binary
-          answers.
-        </li>
-        <li>Each correct answer should add 1 to a score</li>
-        <li>Write the final score to the div called "totalscore" below</li>
-      </p>
-    </div>
-    <button onclick="startQuiz()">
-      Start Binary quiz (10 mins)
-    </button>
-    <div id="totalscore">
-      Your score will appear here
-    </div>
-    <hr />
-    <h2>
-      Part 2: Magic eight ball (12 mins)
-    </h2>
-    <div class="instructions">
-      <li>
-        The user will type a question in the box below and press the button
-        called "Ask".
-      </li>
-      <li>
-        If there is nothing in the box, print out "please enter a question" in
-        the div called "msg"
-      </li>
-
-      <li>Otherwise choose a random sentence from this list:</li>
-      <ul>
-        <li>Ask again later.</li>
-        <li>Concentrate and ask again.</li>
-        <li>Don’t count on it.</li>
-        <li>Most likely.</li>
-        <li>My sources say no.</li>
-        <li>Outlook not so good.</li>
-        <li>Outlook good.</li>
-        <li>Reply hazy, try again.</li>
-        <li>Very doubtful.</li>
-        <li>Yes – definitely.</li>
-      </ul>
-      <p>
-        (You will need to create a correctly formatted array from this list
-        above)
-      </p>
-    </div>
-    <p>Enter the question you would like answered</p>
-    <input id="question" /><button onclick="ball()">
-      Ask
-    </button>     <div id="msg">
-      Answer will appear here
-    </div>
-    <hr />
-    <h2>
-      Part 3: Simple Drawing (10 mins)
-    </h2>
-    <div class="instructions">
-      <p>
-        Using simple shapes and lines draw a picture of a house with at least
-        two windows and a door. Use the 200x200 canvas given below with id =
-        "mycanvas" Use at least three different colours for the door and the
-        windows It should be drawn immediately on page load - not on button
-        click
-      </p>
-    </div>
-<canvas id="mycanvas" width="200" height="200"></canvas>
-    
-    <hr />
-    <h2>
-      Part 4: Advanced Task - random image for Magic Eight Ball task (10 mins)
-    </h2>
-    <div class="instructions">
-      <p>
-        Add an image tag below the div with an id of "msg".
-        <li>
-          Using the images found here: <a href="http://kesdigital.uk/magic8/">http://kesdigital.uk/magic8/</a> show the
-          corresponding image depending on which answer was chosen
-        </li>
-        <li>
-          Hint: an array of image srcs is the most efficient way to do this
-        </li>
-      </p>
-    </div>
-    <hr>
-    <div>
-      Finished? Then investigate how to add a "favicon" to your web page...
-    </div>
+    My zombie map
+    <div id="zombie_map"></div>
+    <script>
+      var zombie_map;
+      function initMap() {
+        zombie_map = new google.maps.Map(
+          document.getElementById("zombie_map"),
+          {
+            zoom: 10,
+            center: { lat: 52.206727, lng: 0.12445 }
+          }
+        );
+        var marker = new google.maps.Marker({
+          position: { lat: 52.206727, lng: 0.12445 },
+          map: zombie_map
+        });
+      }
+    </script>
+    Items I want to appear on my page will go here
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo6P82817_8y53hCu411PN2AUySykpLk4&callback=initMap"
+    ></script>
+    <!--- ^^^^^this is Mrs James API key ^^^^ --->
   </body>
 </html>
