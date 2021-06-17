@@ -15,7 +15,8 @@
     Select an emoji
 <select id="icon_to_use">
   <option value="https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709">Zombie</option>
-  <option value="https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709">Hospital</option>
+  <option value="https://projects-static.raspberrypi.org/projects/zombie-apocalypse-map/01373a767ce8ab5f0d0a5335859c48ea6c8bf2e9/en/images/hospital.png">Hospital</option>
+  <option value="https://projects-static.raspberrypi.org/projects/zombie-apocalypse-map/01373a767ce8ab5f0d0a5335859c48ea6c8bf2e9/en/images/weapons.png">weapons</option>
 </select>
     <div id="zombie_map"></div>
     <script>
@@ -34,11 +35,13 @@
         });
       }
       function placemarker(location) {
+        var emoji = document.getElementById('icon_to_use').value;
         var marker = new google.maps.Marker({
           position: location,
-          map: zombie_map
+          map: zombie_map,
+          icon: emoji
         });
-        
+        console.log(location.lat() +" "+location.lng() +" "+emoji)
       }
     </script>
     Items I want to appear on my page will go here
