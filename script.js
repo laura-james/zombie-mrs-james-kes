@@ -1,1 +1,23 @@
-eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('3 1;5 g(){1=6 9.b.f(7.a("1"),{i:n,l:{c:k.m,d:-2.j}});1.h("o",5(e){3 0=e.w;8(0)})}5 8(0){3 4=7.a(\'p\').y;3 x=6 9.b.v({u:0,q:1,r:4});s.t(0.c()+" "+0.d()+" "+4)}',35,35,'location|zombie_map||var|emoji|function|new|document|placemarker|google|getElementById|maps|lat|lng||Map|initMap|addListener|zoom|344206|51|center|386634|18|click|icon_to_use|map|icon|console|log|position|Marker|latLng|marker|value'.split('|'),0,{}))
+var zombie_map;
+      function initMap() {
+        zombie_map = new google.maps.Map(
+          document.getElementById("zombie_map"),
+          {
+            zoom: 18,
+            center: { lat: 51.386634, lng: -2.344206 }
+          }
+        );
+        zombie_map.addListener("click", function(e) {
+           var location = e.latLng;
+          placemarker(location);
+        });
+      }
+      function placemarker(location) {
+        var emoji = document.getElementById('icon_to_use').value;
+        var marker = new google.maps.Marker({
+          position: location,
+          map: zombie_map,
+          icon: emoji
+        });
+        console.log(location.lat() +" "+location.lng() +" "+emoji)
+      }
