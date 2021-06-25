@@ -2,7 +2,9 @@
   width: 600px;
   height: 400px;
   background-color: black;
+  margin:auto
 }
 body {
   background-color: red;
+  text-align:center;
 }
