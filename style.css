@@ -1,8 +1,10 @@
 #zombie_map {
-  width: 600px;
-  height: 400px;
-  background-color: black;
-  margin:auto
+  height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    background-color: grey;
 }
 body {
   background-color: red;
