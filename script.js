@@ -1,4 +1,6 @@
 var zombie_map;
+var old_position;
+var tolerance =10;
 var all_markers = [];
 var data = `51.387156546966665 -2.343340865629464 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fhospital.png
 51.387133113126175 -2.345062843817025 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png
@@ -18,6 +20,11 @@ function initMap() {
     zoom: 18,
     center: { lat: 51.386634, lng: -2.344206 }
   });
+  old_position = new google.maps.Marker({
+      position: { lat: 51.386634, lng: -2.344206 },
+      map: zombie_map
+      
+    });
   if (navigator.geolocation) {
     navigator.geolocation.watchPosition(set_my_position);
   } else {
@@ -54,8 +61,7 @@ function placemarker(location) {
   console.log(location.lat() + " " + location.lng() + " " + emoji);
 }
 function set_my_position(position) {
-  console.log("setting position ");
-  console.log(position);
+  old_position.setMap(null);
   var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var me = new google.maps.Marker({
     position: pos,
@@ -63,4 +69,12 @@ function set_my_position(position) {
     icon:
       "https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fplayer.png?v=1624998632104"
   });
+  old_position = me;
+  for(var i=0;i<all_markers.length;i++){
+    var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition());
+    console.log(distance);
+    if( distance < tolerance ){
+    alert("Found it!")
+}
+  }
 }
