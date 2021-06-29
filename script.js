@@ -18,12 +18,11 @@ function initMap() {
     zoom: 18,
     center: { lat: 51.386634, lng: -2.344206 }
   });
-  if(navigator.geolocation) {
+  if (navigator.geolocation) {
     navigator.geolocation.watchPosition(set_my_position);
-}
-else {
+  } else {
     alert("Geolocation doesn't work in your browser");
-}
+  }
   for (var i = 0; i < markers.length; i++) {
     console.log(markers[i] + "<br>");
     var marker_data = markers[i].trim();
@@ -53,4 +52,15 @@ function placemarker(location) {
     icon: emoji
   });
   console.log(location.lat() + " " + location.lng() + " " + emoji);
+}
+function set_my_position(position) {
+  console.log("setting position ");
+  console.log(position);
+  var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  var me = new google.maps.Marker({
+    position: pos,
+    map: zombie_map,
+    icon:
+      "https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fplayer.png?v=1624998632104"
+  });
 }
