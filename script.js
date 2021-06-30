@@ -18,7 +18,7 @@ var markers = data.split("\n");
 
 function initMap() {
   zombie_map = new google.maps.Map(document.getElementById("zombie_map"), {
-    zoom: 18,
+    zoom: 17,
     center: { lat: 51.386634, lng: -2.344206 }
   });
   old_position = new google.maps.Marker({
@@ -61,16 +61,18 @@ function placemarker(location) {
   console.log(location.lat() + " " + location.lng() + " " + emoji);
 }
 function set_my_position(position) {
+  console.log(position);
   old_position.setMap(null);
   var pos = new google.maps.LatLng(
     position.coords.latitude,
     position.coords.longitude
   );
+  zombie_map.setCenter(pos);
   var me = new google.maps.Marker({
     position: pos,
     map: zombie_map,
     icon:
-      "https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fsmiley3.png?v=1625063389984"
+      "https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fsmiley4.png?v=1625063691950"
   });
   old_position = me;
   for (var i = 0; i < all_markers.length; i++) {
