@@ -1,3 +1,4 @@
+/*global google*/
 var zombie_map;
 var old_position;
 var tolerance = 10;
@@ -69,7 +70,7 @@ function set_my_position(position) {
     position: pos,
     map: zombie_map,
     icon:
-      "https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fplayer.png?v=1624998632104"
+      "https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fsmiley3.png?v=1625063389984"
   });
   old_position = me;
   for (var i = 0; i < all_markers.length; i++) {
