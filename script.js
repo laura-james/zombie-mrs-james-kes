@@ -28,7 +28,14 @@ var data = `51.387156546966665 -2.343340865629464 https://cdn.glitch.com/1bf28fc
 51.37854517224669 -2.350063944488532 https://projects-static.raspberrypi.org/projects/zombie-apocalypse-map/01373a767ce8ab5f0d0a5335859c48ea6c8bf2e9/en/images/weapons.png
 51.37778174878409 -2.3507720476684635 https://projects-static.raspberrypi.org/projects/zombie-apocalypse-map/01373a767ce8ab5f0d0a5335859c48ea6c8bf2e9/en/images/hospital.png
 51.377286186388204 -2.3513514048156803 https://projects-static.raspberrypi.org/projects/zombie-apocalypse-map/01373a767ce8ab5f0d0a5335859c48ea6c8bf2e9/en/images/hospital.png
-51.37796925748081 -2.351737642913825 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fexplosion.gif?v=1624287611691`;
+51.37796925748081 -2.351737642913825 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fexplosion.gif?v=1624287611691
+51.3848496257224 -2.3461479193267887 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709
+51.38412648237612 -2.345386171966559 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709
+ 51.38383856101147 -2.343819761901862 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709
+51.38394569475412 -2.346813107162482 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709
+ 51.38465544946455 -2.345193052917487 https://cdn.glitch.com/1bf28fcc-9c66-4df1-b451-dfe5f696fac7%2Fzombie.png?v=1623920720709
+
+`;
 
 var markers = data.split("\n");
 
